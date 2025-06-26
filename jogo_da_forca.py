@@ -18,7 +18,7 @@ Data: 12 de Novembro de 2024
 
 import random
 
-# Lista de palavras possíveis (removidas duplicatas)
+# Lista de palavras possíveis
 PALAVRAS = list(set([
     'beijo', 'cacto', 'feito', 'moeda', 'sarjeta', 'amor', 'paixao', 'doce',
     'treta', 'prazer', 'encanto', 'carinho', 'estrume', 'folgado', 'quente',
