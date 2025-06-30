@@ -4,16 +4,21 @@ import random
 class Forca:
     def __init__(self, palavras):
         self.palavras = palavras
-        self.palavra = self.escolher_palavra()
+        self.palavra()
         self.letras_descobertas = []
         self.letras_erradas = []
         self.vidas = 5
+        print(f"Palavra: {self.palavra}")
+        print(f"Letras: {self.letras_corretas}")
         
     
-    def escolher_palavra(self):
+    def palavra(self):
         ''' Seleciona uma palavra aleatória da lista de palavras.'''
-        return random.choice(self.palavras)
+        self.palavra =  random.choice(self.palavras)
     
+    @property
+    def letras_corretas(self):
+        return list(set([l for l in self.palavra]))
     
     @property
     def progresso(self):
@@ -70,7 +75,7 @@ class Forca:
         print("====== JOGO DA FORA ======")
         print(f"Adivinhe uma palavra de {len(self.palavra)} letras.\n")
 
-        while self.vidas > 0 and len(self.letras_descobertas) < len(self.palavras):
+        while self.vidas > 0 and len(self.letras_descobertas) < len(self.letras_corretas):
             print(f"Vidas restantes: {'❤' * self.vidas}")
             self.tentativa()
         self.concluir()
@@ -98,4 +103,8 @@ if __name__ == "__main__":
     f = Forca(PALAVRAS)
     f.jogar()
 
+'''
+TODO: Espaçar mais os corações de vida
+TODO: Arrumar o algoritmo para que o jogo entenda quando o jogador completar a palavra
+'''
     
