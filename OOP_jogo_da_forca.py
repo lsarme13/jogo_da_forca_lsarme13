@@ -8,8 +8,6 @@ class Forca:
         self.letras_descobertas = []
         self.letras_erradas = []
         self.vidas = 5
-        print(f"Palavra: {self.palavra}")
-        print(f"Letras: {self.letras_corretas}")
         
     
     def palavra(self):
@@ -76,7 +74,7 @@ class Forca:
         print(f"Adivinhe uma palavra de {len(self.palavra)} letras.\n")
 
         while self.vidas > 0 and len(self.letras_descobertas) < len(self.letras_corretas):
-            print(f"Vidas restantes: {'❤' * self.vidas}")
+            print(f"Vidas restantes: {' ❤ ' * self.vidas}")
             self.tentativa()
         self.concluir()
         
@@ -102,9 +100,4 @@ if __name__ == "__main__":
     ]
     f = Forca(PALAVRAS)
     f.jogar()
-
-'''
-TODO: Espaçar mais os corações de vida
-TODO: Arrumar o algoritmo para que o jogo entenda quando o jogador completar a palavra
-'''
     
